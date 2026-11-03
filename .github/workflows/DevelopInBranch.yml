@@ -14,8 +14,9 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-    #   - name: Lint Workflow Files
+      - name: Lint Workflow Files
         # uses: devops-actions/actionlint@v0.1.2
+        uses: raven-actions/actionlint@v2
         # uses: reviewdog/action-actionlint@v1
         # with:
         #   github_token: ${{ secrets.GITHUB_TOKEN }}
