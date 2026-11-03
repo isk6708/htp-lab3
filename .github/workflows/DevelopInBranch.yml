@@ -28,4 +28,4 @@ jobs:
 
       - name: Print Pull Request Title
         if: github.event_name == 'pull_request'
-        run: echo "PR title is '${{ github.event.pull_request.title }}'."
+        run: echo "Demo PR title is '${{ github.event.pull_request.title }}'."
