@@ -1,1 +1,1 @@
-# My Checkout
+# My Checkout - Day 2
