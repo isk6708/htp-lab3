@@ -15,10 +15,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Lint Workflow Files
-        uses: reviewdog/action-actionlint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review # Inline review comments on your Pull Request
+        # uses: reviewdog/action-actionlint@v1
+        uses: devops-actions/actionlint@v0.1.2
+        # with:
+        #   github_token: ${{ secrets.GITHUB_TOKEN }}
+        #   reporter: github-pr-review # Inline review comments on your Pull Request
 
       - name: Output Context Metadata
         run: |
