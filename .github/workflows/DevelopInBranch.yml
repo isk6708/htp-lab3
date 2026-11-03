@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
     #   - name: Lint Workflow Files
+        # uses: devops-actions/actionlint@v0.1.2
         # uses: raven-actions/actionlint@v2
         
       - name: Install and Run Actionlint Natively
