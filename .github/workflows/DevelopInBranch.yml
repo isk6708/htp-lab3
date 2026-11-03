@@ -10,7 +10,7 @@ on:
         description: 'Skip the workflow linter step? (1 = Yes, 0 = No)'
         required: true
         type: choice
-        default: '1'
+        default: '0'
         options:
           - '0'
           - '1'
@@ -40,15 +40,15 @@ jobs:
     #       ./actionlint -color
     #     shell: bash
 
-    #   - name: Install and Run Actionlint Natively
-    #     if: ${{ inputs.withoutlinter != '1' }}
-    #     run: |
-    #       echo "=== Downloading Actionlint ==="
-    #       bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+      - name: Install and Run Actionlint Natively
+        if: ${{ inputs.withoutlinter != '1' }}
+        run: |
+          echo "=== Downloading Actionlint ==="
+          bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
           
-    #       echo "=== Running Workflow Linting ==="
-    #       ./actionlint -color
-    #     shell: bash
+          echo "=== Running Workflow Linting ==="
+          ./actionlint -color
+        shell: bash
 
       - name: Output Context Metadata
         run: |
@@ -72,10 +72,10 @@ jobs:
         run: echo "Demo PR title is '$PR_TITLE'."
 
       # VULNERABLE STEP: Runs ONLY when the linter is BYPASSED (withoutlinter == 'true')
-      - name: Print Pull Request Title (Vulnerable Mode)
-        if: ${{ github.event_name == 'pull_request' && inputs.withoutlinter == '1' }}
-        # actionlint-disable expression
-        run: echo "Demo PR title is '${{ github.event.pull_request.title }}'."
+    #   - name: Print Pull Request Title (Vulnerable Mode)
+    #     if: ${{ github.event_name == 'pull_request' && inputs.withoutlinter == '1' }}
+    #     # actionlint-disable expression
+    #     run: echo "Demo PR title is '${{ github.event.pull_request.title }}'."
         
       - name: Log run metadata
         run: | 
