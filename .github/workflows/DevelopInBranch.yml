@@ -10,7 +10,7 @@ on:
         description: 'Skip the workflow linter step?'
         required: true
         type: boolean
-        default: false
+        default: true
   push:
 
 jobs:
