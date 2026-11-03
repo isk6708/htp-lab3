@@ -52,6 +52,7 @@ jobs:
           echo "Workflow triggered in branch '${{ github.ref }}'."
           echo "Workflow triggered by event '${{ github.event_name }}'."
           echo "Workflow triggered by actor '${{ github.actor }}'."
+          echo "Without Linter: '${{ github.event.inputs.withoutlinter }}'."
 
     #   - name: Print Pull Request Title
     #     # run: echo "Demo PR title is '${{ github.event.pull_request.title }}'."
