@@ -6,7 +6,8 @@ labels:
   - 'issue-ops'
 assignees:
   - isk6708
-projects: 'isk6708/4'
+projects:
+  - 'isk6708/4'
 body:
   - type: input
     id: name
