@@ -30,3 +30,11 @@ body:
       default: 0
     validations:
       required: true
+  - type: textarea
+    id: comments
+    attributes:
+      label: 'Additional Comments / Notes'
+      description: 'Add any specific requirements, team member permissions, or notes for this repository request.'
+      placeholder: 'e.g., This repository requires access for the external vendor team.'
+    validations:
+      required: false
